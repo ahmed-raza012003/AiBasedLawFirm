@@ -1,0 +1,177 @@
+/* ========== General Styles ========== */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f5f5f5;
+    color: #1E2A38;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== Sidebar ========== */
+.main-nav {
+    width: 260px;
+    height: 100vh;
+    background-color: #1E2A38;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+.logo-box {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.logo-box img {
+    width: 150px;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    margin-bottom: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #D4AF37;
+    color: #1E2A38;
+}
+
+.nav-icon {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Sub-menu */
+.sub-navbar-nav {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+}
+
+.sub-nav-item .sub-nav-link {
+    display: block;
+    color: #D4AF37;
+    padding: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sub-nav-item .sub-nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ========== Topbar ========== */
+.topbar {
+    height: 60px;
+    background-color: #1E2A38;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.topbar .topbar-button {
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.topbar .topbar-button:hover {
+    color: white;
+}
+
+/* ========== Main Content ========== */
+.main-content {
+    margin-left: 260px;
+    padding-top: 80px;
+}
+
+/* ========== Cards ========== */
+.card {
+    background-color: white;
+    border: 1px solid #D4AF37;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+    color: #1E2A38;
+    font-weight: bold;
+}
+
+.card h3 {
+    color: #D4AF37;
+    font-size: 28px;
+}
+
+/* ========== Footer ========== */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1E2A38;
+    color: white;
+    font-size: 14px;
+}
+
+/* ========== Buttons ========== */
+.btn-primary {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    color: #1E2A38;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #B58929;
+    border-color: #B58929;
+    color: white;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 992px) {
+    .main-nav {
+        width: 80px;
+    }
+
+    .main-content {
+        margin-left: 80px;
+    }
+
+    .topbar {
+        left: 80px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+}

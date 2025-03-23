@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')->constrained('clients')->onDelete('cascade');
+            $table->foreignId('lawyer_id')->constrained('lawyers')->onDelete('cascade');
+            $table->string('section_code'); // Matched section from dataset
+            $table->enum('status', ['open', 'closed'])->default('open');
+            $table->enum('stage', ['filed', 'investigation', 'trial', 'verdict', 'appeal', 'closed'])->default('filed');
             $table->timestamps();
         });
     }

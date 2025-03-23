@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::create('hearings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')->constrained('clients')->onDelete('cascade');
+            $table->foreignId('lawyer_id')->constrained('lawyers')->onDelete('cascade');
+            $table->date('date');
+            $table->time('time');
+            $table->text('description');
+            $table->string('location');
+            $table->string('court');
+            $table->enum('status', ['scheduled', 'completed', 'cancelled'])->default('scheduled');
             $table->timestamps();
         });
+        
     }
 
     /**

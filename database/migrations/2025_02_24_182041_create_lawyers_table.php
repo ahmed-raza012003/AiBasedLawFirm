@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('lawyers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('address');
             $table->string('city');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
-            $table->foreignId('lawyer_id')->nullable()->constrained('lawyers')->onDelete('set null');
-            $table->string('section_code')->nullable(); // Matched law section
+            $table->enum('status', ['available', 'busy'])->default('available');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('lawyers');
     }
 };
